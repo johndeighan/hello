@@ -48,5 +48,15 @@ Install Heroku CLI and execute:
 ```bash
 $ heroku login
 $ heroku create jd-hello
+$ git init
+$ git branch -M main
+$ git add -A
+$ git commit -m "initial commit"
+
+```
+
+Adding a remote:
+```bash
+$ git remote add origin https://github.com/<YOUR-USER-NAME>/<YOUR-REPOSITORY-NAME>
 ```
 
