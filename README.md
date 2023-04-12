@@ -1,11 +1,10 @@
-How to build and deploy to Heroku
+How to build and deploy to Vercel
 =================================
 
 ```bash
 $ npm create svelte@latest hello
 $ cd hello
 $ npm install
-$ npm install -D @sveltejs/adapter-node
 $ npm install -D @sveltejs/adapter-vercel
 $ npm run dev
 ```
@@ -24,7 +23,6 @@ Change `package.json` to:
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0-next.90",
-		"@sveltejs/adapter-node": "^1.2.3",
 		"@sveltejs/adapter-vercel": "^2.4.1",
 		"@sveltejs/kit": "^1.0.0-next.587",
 		"svelte": "^3.54.0",
@@ -36,7 +34,7 @@ Change `package.json` to:
 Change `src/routes/+page.svelte` to:
 
 ```svelte
-<h1>Hello</h1>
+<h1>Hello There</h1>
 ```
 
 In `svelte.config.js`, change:
