@@ -2,11 +2,12 @@ How to build and deploy to Heroku
 =================================
 
 ```bash
-npm create svelte@latest hello
-cd hello
-npm install
-npm install -D @sveltejs/adapter-node
-npm run dev
+$ npm create svelte@latest hello
+$ cd hello
+$ npm install
+$ npm install -D @sveltejs/adapter-node
+$ npm install -D @sveltejs/adapter-vercel
+$ npm run dev
 ```
 
 Change `package.json` to:
@@ -24,17 +25,19 @@ Change `package.json` to:
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0-next.90",
 		"@sveltejs/adapter-node": "^1.2.3",
+		"@sveltejs/adapter-vercel": "^2.4.1",
 		"@sveltejs/kit": "^1.0.0-next.587",
 		"svelte": "^3.54.0",
 		"vite": "^4.0.0"
 	}
 }
 ```
+
 Change `src/routes/+page.svelte` to:
 
 ```svelte
 <h1>Hello</h1>
-``
+```
 
 In `svelte.config.js`, change:
 ```js
@@ -42,8 +45,20 @@ import adapter from '@sveltejs/adapter-auto';
 ```
 to:
 ```js
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-vercel';
 ```
+
+
+
+
+
+
+
+
+
+Heroku Deployment
+-----------------
+
 Install Heroku CLI and execute:
 ```bash
 $ heroku login
@@ -54,9 +69,3 @@ $ git add -A
 $ git commit -m "initial commit"
 
 ```
-
-Adding a remote:
-```bash
-$ git remote add origin https://github.com/<YOUR-USER-NAME>/<YOUR-REPOSITORY-NAME>
-```
-
